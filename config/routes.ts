@@ -43,6 +43,28 @@
 		component: './TodoList',
 	},
 
+
+	{
+	name: 'baitap01',
+	path: '/baitap01',
+	icon: 'AppstoreOutlined',
+	routes: [
+		{
+			name: 'Bai1',
+			path: 'bai1',
+			component: '@/components/baitap01/index',
+		},
+		{
+			name: 'Bai2',
+			path: 'bai2',
+			component: '@/components/baitap02/index',
+		},
+	],
+},
+
+
+
+
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',
@@ -96,3 +118,5 @@
 		component: './exception/404',
 	},
 ];
+
+	
