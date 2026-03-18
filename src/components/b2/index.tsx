@@ -158,7 +158,7 @@ export default function BaiTap02() {
         </div>
 
         <div style={{ marginTop: 10 }}>
-          {totalTime >= goal ? (
+          {totalTime >= (goal || 0) ? (
             <Text type="success">✅ Đã đạt mục tiêu</Text>
           ) : (
             <Text type="danger">❌ Chưa đạt mục tiêu</Text>

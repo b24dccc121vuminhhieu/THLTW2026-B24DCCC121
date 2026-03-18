@@ -1,4 +1,6 @@
-﻿export default [
+﻿import component from "@/locales/en-US/component";
+
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -50,18 +52,49 @@
 	icon: 'AppstoreOutlined',
 	routes: [
 		{
-			name: 'Bai1',
-			path: 'bai1',
-			component: '@/components/baitap01/index',
+			name: 'b1',
+			path: 'b1',
+			component: '@/components/b1/index',
 		},
 		{
-			name: 'Bai2',
-			path: 'bai2',
-			component: '@/components/baitap02/index',
+			name: 'b2',
+			path: 'b2',
+			component: '@/components/b2/index',
+		},
+	],
+},
+   
+    {
+    name: 'baitap02',
+    path: '/baitap02',
+    icon: 'AppstoreOutlined',
+    routes: [
+    {
+      name: 'Bai1',
+      path: 'bai1',
+      component: '@/components/bai1/index',
+    },
+    {
+      name: 'Bai2',
+      path: 'bai2',
+      component: '@/components/bai2/index',
 		},
 	],
 },
 
+    {
+	name: 'baitap03',
+    path: '/baitap03',
+	icon: 'AppstoreOutlined',
+	routes: [
+	{
+	  name: 'Bai1th03',
+	  path: 'bai1th03',
+	  component: '@/components/bai1th3/index',
+
+	    },
+	],
+},
 
 
 
