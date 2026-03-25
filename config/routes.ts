@@ -1,6 +1,4 @@
-﻿import component from "@/locales/en-US/component";
-
-export default [
+﻿export default [
 	{
 		path: '/user',
 		layout: false,
@@ -94,6 +92,20 @@ export default [
 
 	    },
 	],
+},
+ 
+    {
+	name: 'baitap04',
+	path: '/baitap04',
+	icon: 'AppstoreOutlined',
+	routes: [
+	{
+		name: 'Bai1th04',
+		path: 'bai1th04',
+		component: '@/components/bai1th4/index',
+	    
+		},
+    ],
 },
 
 

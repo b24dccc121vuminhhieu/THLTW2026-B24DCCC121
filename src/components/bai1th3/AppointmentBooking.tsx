@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, Form, Select, DatePicker, TimePicker, Button, message, Row, Col, Input } from 'antd';
-import { CalendarOutlined } from '@ant-design/icons';
-import dayjs from 'dayjs';
-import type { Dayjs } from 'dayjs';
+import moment from 'moment';
+import type { Moment } from 'moment';
 
 interface Employee {
   id: string;
@@ -81,19 +80,19 @@ const AppointmentBooking: React.FC = () => {
       customerPhone: '0123456789',
       serviceId: '1',
       employeeId: '1',
-      date: dayjs().format('YYYY-MM-DD'),
+      date: moment().format('YYYY-MM-DD'),
       startTime: '10:00',
       endTime: '10:30',
       status: 'confirmed',
     },
   ];
 
-  const getDayOfWeek = (date: Dayjs) => {
+  const getDayOfWeek = (date: Moment) => {
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     return days[date.day()];
   };
 
-  const checkAvailability = (employeeId: string, date: Dayjs, startTime: Dayjs, duration: number) => {
+  const checkAvailability = (employeeId: string, date: Moment, startTime: Moment, duration: number) => {
     const employee = employees.find(emp => emp.id === employeeId);
     if (!employee) return false;
 
@@ -102,9 +101,9 @@ const AppointmentBooking: React.FC = () => {
 
     if (!workSchedule) return false;
 
-    const workStart = dayjs(`${date.format('YYYY-MM-DD')} ${workSchedule.start}`);
-    const workEnd = dayjs(`${date.format('YYYY-MM-DD')} ${workSchedule.end}`);
-    const appointmentStart = dayjs(`${date.format('YYYY-MM-DD')} ${startTime.format('HH:mm')}`);
+    const workStart = moment(`${date.format('YYYY-MM-DD')} ${workSchedule.start}`);
+    const workEnd = moment(`${date.format('YYYY-MM-DD')} ${workSchedule.end}`);
+    const appointmentStart = moment(`${date.format('YYYY-MM-DD')} ${startTime.format('HH:mm')}`);
     const appointmentEnd = appointmentStart.add(duration, 'minute');
 
     if (appointmentStart.isBefore(workStart) || appointmentEnd.isAfter(workEnd)) {
@@ -117,8 +116,8 @@ const AppointmentBooking: React.FC = () => {
     );
 
     for (const app of dayAppointments) {
-      const existingStart = dayjs(`${app.date} ${app.startTime}`);
-      const existingEnd = dayjs(`${app.date} ${app.endTime}`);
+      const existingStart = moment(`${app.date} ${app.startTime}`);
+      const existingEnd = moment(`${app.date} ${app.endTime}`);
 
       if (appointmentStart.isBefore(existingEnd) && appointmentEnd.isAfter(existingStart)) {
         return false;
@@ -173,12 +172,12 @@ const AppointmentBooking: React.FC = () => {
     form.resetFields();
   };
 
-  const disabledDate = (current: Dayjs) => {
-    return current && current < dayjs().startOf('day');
+  const disabledDate = (current: Moment) => {
+    return current && current < moment().startOf('day');
   };
 
   return (
-    <Card title="Đặt lịch hẹn" icon={<CalendarOutlined />}>
+    <Card title="Đặt lịch hẹn">
       <Form form={form} layout="vertical" onFinish={handleSubmit}>
         <Row gutter={16}>
           <Col span={12}>
