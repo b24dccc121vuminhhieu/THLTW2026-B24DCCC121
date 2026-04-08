@@ -108,6 +108,33 @@
     ],
 },
 
+{
+	name: 'baitap05',
+	path: '/baitap05',
+	icon: 'AppstoreOutlined',
+	routes: [
+	{
+		name: 'Bai1th05',
+		path: 'bai1th05',
+		component: '@/components/bai1th5/index',
+	    
+		},
+    ],
+},
+
+{
+	name: 'baitap06',
+	path: '/baitap06',
+	icon: 'AppstoreOutlined',
+	routes: [
+	{
+		name: 'Bai1th06',
+		path: 'bai1th06',
+		component: '@/components/bai1th6/index',
+	    
+		},
+    ],
+},
 
 
 	// DANH MUC HE THONG
