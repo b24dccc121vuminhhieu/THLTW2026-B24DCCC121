@@ -150,6 +150,20 @@
     ],
 },
 
+{
+	name: 'baitap09',
+	path: '/baitap09',
+	icon: 'AppstoreOutlined',
+	routes: [
+	{
+		name: 'Bai1th09',
+		path: 'bai1th09',
+		component: '@/components/bai1th9/index',
+	    
+		},
+    ],
+},
+
 
 {
 	name: 'baigiuaky',
