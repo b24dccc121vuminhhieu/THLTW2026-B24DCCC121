@@ -151,6 +151,20 @@
 },
 
 {
+	name: 'baitap08',
+	path: '/baitap08',
+	icon: 'AppstoreOutlined',
+	routes: [
+	{
+		name: 'Bai1th08',
+		path: 'bai1th08',
+		component: '@/components/bai1th8/index',
+	    
+		},
+    ],
+},
+
+{
 	name: 'baitap09',
 	path: '/baitap09',
 	icon: 'AppstoreOutlined',
